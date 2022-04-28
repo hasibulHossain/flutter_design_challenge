@@ -7,7 +7,8 @@ import 'package:nft_marketplace_concept/widgets/custom_appbar/custom_appbar.dart
 class NftDetailsScreen extends StatelessWidget {
   final int index;
   final String image;
-  const NftDetailsScreen({Key? key, required this.index, required this.image}) : super(key: key);
+  const NftDetailsScreen({Key? key, required this.index, required this.image})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class NftDetailsScreen extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: ScreenUtil().statusBarHeight + 10),
+          SizedBox(height: ScreenUtil().statusBarHeight + 10.h),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: screenBasePadding),
             child: CustomAppBar(
@@ -128,14 +129,15 @@ class NftDetailsScreen extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.only(bottom: 5.0),
+                                  padding: EdgeInsets.only(bottom: 5.h),
                                   child: Text('Highest Bid Placed By'),
                                 ),
                                 Text(
                                   'Merry Rose',
                                   style: TextStyle(
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 16.sp),
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 16.sp,
+                                  ),
                                 )
                               ],
                             ),
@@ -179,8 +181,21 @@ class CustomButton extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text('Place Bid', style: TextStyle(color: Colors.white, fontSize: 18.sp, fontWeight: FontWeight.w600,),),
-          Text('20h : 35m : 00s', style: TextStyle(color: Colors.white, fontSize: 16.sp, ),),
+          Text(
+            'Place Bid',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 18.sp,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          Text(
+            '20h : 35m : 00s',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 16.sp,
+            ),
+          ),
         ],
       ),
     );

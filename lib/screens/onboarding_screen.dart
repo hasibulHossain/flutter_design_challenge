@@ -24,129 +24,128 @@ class OnboardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            SizedBox(
-              height: ScreenUtil().statusBarHeight + 10,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: screenBasePadding.r),
-              child: CustomAppBar(
-                  trailing: Container(
-                width: 45.r,
-                height: 45.r,
-                decoration: const BoxDecoration(
-                  color: Colors.black,
-                  shape: BoxShape.circle,
-                ),
-                child: const Center(
-                  child: Icon(
-                    Iconsax.wallet_1,
-                    color: Colors.white,
-                  ),
-                ),
-              )),
-            ),
-            SizedBox(
-              height: 40.h,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: screenBasePadding),
-              child: SizedBox(
-                height: 15.w,
-                child: FadeAnimation(
-                  intervalEnd: 0.5,
-                  child: Row(
-                    children: [
-                      SvgPicture.asset('assets/images/flash.svg'),
-                      SizedBox(
-                        width: 8.w,
-                      ),
-                      Text(
-                        'Start',
-                        style: TextStyle(fontSize: 14.sp),
-                      )
-                    ],
-                  ),
+      body: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          SizedBox(
+            height: ScreenUtil().statusBarHeight + 10,
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: screenBasePadding.r),
+            child: CustomAppBar(
+                trailing: Container(
+              width: 45.r,
+              height: 45.r,
+              decoration: const BoxDecoration(
+                color: Colors.black,
+                shape: BoxShape.circle,
+              ),
+              child: const Center(
+                child: Icon(
+                  Iconsax.wallet_1,
+                  color: Colors.white,
                 ),
               ),
-            ),
-            SizedBox(
-              height: 16.h,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: screenBasePadding),
-              child: SlideAnimation(
-                intervalEnd: 0.6,
-                child: FadeAnimation(
-                  intervalEnd: 0.6,
-                  child: RichText(
-                    text: TextSpan(style: _textBoldStyle, children: const [
-                      TextSpan(
-                          text: 'Discover',
-                          style: TextStyle(fontWeight: FontWeight.w200)),
-                      TextSpan(
-                        text: ' Rare \nCollections ',
-                      ),
-                      TextSpan(
-                          text: 'Of',
-                          style: TextStyle(fontWeight: FontWeight.w200)),
-                    ]),
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: screenBasePadding),
-              child: SlideAnimation(
-                intervalEnd: 0.5,
-                begin: const Offset(0, -50),
-                child: FadeAnimation(
-                  intervalEnd: 0.5,
-                  child: Row(
-                    children: [
-                      Text(
-                        'Art & ',
-                        style: _textBoldStyle,
-                      ),
-                      const ColoredText('NFTs')
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 20.h,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: screenBasePadding),
+            )),
+          ),
+          SizedBox(
+            height: 40.h,
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: screenBasePadding),
+            child: SizedBox(
+              height: 15.w,
               child: FadeAnimation(
                 intervalEnd: 0.5,
-                child: Text(
-                  'Digital marketplace for crypto \nand non-fungible tokens.',
-                  style: TextStyle(
-                      fontSize: 16.sp, letterSpacing: 1.2, height: 1.2),
+                child: Row(
+                  children: [
+                    SvgPicture.asset('assets/images/flash.svg'),
+                    SizedBox(
+                      width: 8.w,
+                    ),
+                    Text(
+                      'Start',
+                      style: TextStyle(fontSize: 14.sp),
+                    )
+                  ],
                 ),
               ),
             ),
-            SizedBox(
-              height: 30.h,
+          ),
+          SizedBox(
+            height: 16.h,
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: screenBasePadding),
+            child: SlideAnimation(
+              intervalEnd: 0.6,
+              child: FadeAnimation(
+                intervalEnd: 0.6,
+                child: RichText(
+                  text: TextSpan(style: _textBoldStyle, children: const [
+                    TextSpan(
+                        text: 'Discover',
+                        style: TextStyle(fontWeight: FontWeight.w200)),
+                    TextSpan(
+                      text: ' Rare \nCollections ',
+                    ),
+                    TextSpan(
+                        text: 'Of',
+                        style: TextStyle(fontWeight: FontWeight.w200)),
+                  ]),
+                ),
+              ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(left: screenBasePadding),
-              child: DiscoverNetwork(),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: screenBasePadding),
+            child: SlideAnimation(
+              intervalEnd: 0.5,
+              begin: const Offset(0, -50),
+              child: FadeAnimation(
+                intervalEnd: 0.5,
+                child: Row(
+                  children: [
+                    Text(
+                      'Art & ',
+                      style: _textBoldStyle,
+                    ),
+                    const ColoredText('NFTs')
+                  ],
+                ),
+              ),
             ),
-            SizedBox(
-              height: 30.h,
+          ),
+          SizedBox(
+            height: 20.h,
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: screenBasePadding),
+            child: FadeAnimation(
+              intervalEnd: 0.5,
+              child: Text(
+                'Digital marketplace for crypto \nand non-fungible tokens.',
+                style:
+                    TextStyle(fontSize: 16.sp, letterSpacing: 1.2, height: 1.2),
+              ),
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: screenBasePadding),
-              child: SupportedBy(),
-            )
-          ],
-        ),
+          ),
+          SizedBox(
+            height: 30.h,
+          ),
+          const Padding(
+            padding: EdgeInsets.only(left: screenBasePadding),
+            child: DiscoverNetwork(),
+          ),
+          SizedBox(
+            height: 30.h,
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: screenBasePadding),
+            child: SupportedBy(),
+          )
+        ],
       ),
     );
   }
@@ -159,31 +158,28 @@ class ColoredText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 100.w,
-      child: Stack(
-        children: [
-          Positioned(
-            bottom: 0,
-            left: 10.w,
-            child: Container(
-              width: 85.w,
-              height: 30.w,
-              color: const Color(0xffaafaff),
-            ),
+    return Stack(
+      children: [
+        Positioned(
+          bottom: 0,
+          left: 10.w,
+          child: Container(
+            width: 85.w,
+            height: 30.w,
+            color: const Color(0xffaafaff),
           ),
-          Text(
-            text,
-            style: TextStyle(
-              fontSize: 45.sp,
-              fontFamily: 'Dsignes',
-              fontWeight: FontWeight.w600,
-              color: Colors.black,
-              // height: 1.3,
-            ),
+        ),
+        Text(
+          text,
+          style: TextStyle(
+            fontSize: 45.sp,
+            fontFamily: 'Dsignes',
+            fontWeight: FontWeight.w600,
+            color: Colors.black,
+            // height: 1.3,
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
@@ -222,13 +218,14 @@ class DiscoverNetwork extends StatelessWidget {
                 Text(
                   '1.7M+',
                   style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 22.sp,
-                      fontFamily: 'Dsignes'),
+                    fontWeight: FontWeight.w600,
+                    fontSize: 22.sp,
+                    fontFamily: 'Dsignes',
+                  ),
                 ),
                 Text(
                   'Artist',
-                  style: TextStyle(fontSize: 15.sp, height: 1.4),
+                  style: TextStyle(fontSize: 15.sp, height: 1.4.h),
                 ),
               ],
             ),
@@ -241,11 +238,11 @@ class DiscoverNetwork extends StatelessWidget {
                   style: TextStyle(
                       fontWeight: FontWeight.w600,
                       fontSize: 22.sp,
-                      fontFamily: 'Dsignes'),
+                      fontFamily: 'Dsignes',),
                 ),
                 Text(
                   'Auction',
-                  style: TextStyle(fontSize: 15.sp, height: 1.4),
+                  style: TextStyle(fontSize: 15.sp, height: 1.4.h,),
                 ),
               ],
             ),
@@ -255,54 +252,62 @@ class DiscoverNetwork extends StatelessWidget {
           width: 50.w,
         ),
         Expanded(
-            child: Container(
-          height: 220.h,
-          color: Color(0xffe6d9fe),
-          child: Padding(
-            padding: EdgeInsets.all(30.r),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      PageTransition(
-                          child: HomeScreen(), type: PageTransitionType.fadeIn),
-                    );
-                  },
-                  child: Container(
-                    height: 50.w,
-                    width: 50.w,
-                    color: Color(0xffcab2ff),
-                    child: Center(
-                      child: Icon(CupertinoIcons.arrow_right),
+          child: Container(
+            height: 220.h,
+            width: double.infinity,
+            color: const Color(0xffe6d9fe),
+            child: Padding(
+              padding: EdgeInsets.all(30.r),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        PageTransition(
+                          child: HomeScreen(),
+                          type: PageTransitionType.fadeIn,
+                        ),
+                      );
+                    },
+                    child: Container(
+                      height: 50.w,
+                      width: 50.w,
+                      color: const Color(0xffcab2ff),
+                      child: const Center(
+                        child: Icon(CupertinoIcons.arrow_right),
+                      ),
                     ),
                   ),
-                ),
-                SizedBox(
-                  height: 20.h,
-                ),
-                Text(
-                  'Discover\nArtwork',
-                  style: TextStyle(
-                    fontSize: 35.sp,
-                    letterSpacing: 5,
+                  SizedBox(
+                    height: 20.h,
                   ),
-                ),
-                SizedBox(
-                  width: 80.w,
-                  child: Divider(
-                    height: 30,
-                    thickness: 2,
-                    color: Colors.black,
+                  Expanded(
+                    child: Text(
+                      'Discover\nArtwork',
+                      style: TextStyle(
+                        fontSize: 35.sp,
+                        letterSpacing: 5.w,
+                      ),
+                    ),
                   ),
-                )
-              ],
+                  Padding(
+                    padding: EdgeInsets.only(top: 10.h),
+                    child: SizedBox(
+                      width: 80.w,
+                      child: const Divider(
+                        thickness: 2,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
-        ))
+        ),
       ],
     );
   }
@@ -344,7 +349,7 @@ class SupportedBy extends StatelessWidget {
               ),
             ],
           ),
-        )
+        ),
       ],
     );
   }

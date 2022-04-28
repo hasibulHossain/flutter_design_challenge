@@ -108,10 +108,11 @@ class _HomeScreenState extends State<HomeScreen> {
           SizedBox(
             height: 20.h,
           ),
-          Padding(
-            padding: EdgeInsets.only(left: screenBasePadding),
-            child: _Categories(category),
-          ),
+          // Padding(
+          //   padding: EdgeInsets.only(left: screenBasePadding),
+          //   child: _Categories(category),
+          // ),
+          _Categories(category),
           SizedBox(
             height: 20.h,
           ),
@@ -130,7 +131,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: NftDetailsScreen(
                           index: index,
                           image: nft[index]["image"] as String,
-                          
+
                         ),
                         type: PageTransitionType.fadeIn,
                       ),
@@ -253,15 +254,19 @@ class _Categories extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 40.h,
-      child: ListView.builder(
-        shrinkWrap: true,
-        scrollDirection: Axis.horizontal,
-        itemCount: _categories.length,
-        itemBuilder: (_, index) => _CategoryItem(
-          _categories[index],
-          index: index,
+    return Padding(
+      padding: const EdgeInsets.only(left: screenBasePadding,),
+      child: Container(
+        height: 40.h,
+        alignment: Alignment.centerLeft,
+        child: ListView.builder(
+          shrinkWrap: true,
+          scrollDirection: Axis.horizontal,
+          itemCount: _categories.length,
+          itemBuilder: (_, index) => _CategoryItem(
+            _categories[index],
+            index: index,
+          ),
         ),
       ),
     );
@@ -279,7 +284,7 @@ class _CategoryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       // color: Colors.black,
-      padding: EdgeInsets.symmetric(horizontal: 15.r, vertical: 15.r),
+      padding: EdgeInsets.symmetric(horizontal: 15.sp,),
       // margin: EdgeInsets.only(right: 20.w),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(6),

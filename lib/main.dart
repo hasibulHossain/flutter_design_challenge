@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
+      minTextAdapt: true,
       builder: (_) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
