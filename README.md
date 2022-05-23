@@ -2,4 +2,6 @@
 
 ## Game screenshot
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
+<p align='center'>
+  <img width='300' src='https://raw.githubusercontent.com/hasibulHossain/flutter_design_challenge/draggable-even-odd-example/Screenshot%202022-05-23%20at%206.51.30%20PM.png' />
+  </p>
