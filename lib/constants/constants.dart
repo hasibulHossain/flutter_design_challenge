@@ -1,1 +1,0 @@
-const double screenBasePadding = 30;

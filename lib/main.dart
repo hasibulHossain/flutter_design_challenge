@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:nft_marketplace_concept/screens/onboarding_screen.dart';
+import 'package:nft_marketplace_concept/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +18,11 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
           theme: ThemeData(
-            textTheme: TextTheme(),
+            textTheme: ThemeData.light().textTheme.copyWith(
+              headline5: const TextStyle(
+                color: Colors.white,
+              )
+            ),
             fontFamily: 'Dsignes',
             // This is the theme of your application.
             //
@@ -31,7 +35,7 @@ class MyApp extends StatelessWidget {
             // is not restarted.
             primarySwatch: Colors.blue,
           ),
-          home: OnboardingScreen(),
+          home: Home(),
         );
       },
     );
